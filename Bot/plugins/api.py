@@ -6,7 +6,7 @@ class AnimePahe():
 
     def search(query):
         json = None
-        response = requests.get(f'http://api.soheru.in/animepahe/search/{query}', timeout=300)
+        response = requests.get(f'https://pahe.vercel.app//animepahe/search/{query}', timeout=300)
         if response.status_code == 200:
             json = response.json()
 
@@ -16,13 +16,13 @@ class AnimePahe():
         return results
 
     def get_latest():
-        response = requests.get('http://api.soheru.in/animepahe/airing', timeout=300).json()
+        response = requests.get('https://pahe.vercel.app//animepahe/airing', timeout=300).json()
         data = response['data']
         return data
 
     def get_episode_links(episode_id):
         json = None
-        url = "http://api.soheru.in/animepahe/download/" + episode_id
+        url = "https://pahe.vercel.app//animepahe/download/" + episode_id
         response = requests.get(url, timeout=300)
         if response.status_code == 200:
             json = response.json()
