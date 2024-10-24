@@ -5,7 +5,7 @@ from Bot import LOG, soheru
 from Bot.database.client import startup
 
 
-x = requests.get('http://soheru.in', allow_redirects=True).status_code
+x = requests.get('https://pahe.vercel.app', allow_redirects=True).status_code
 if x != 200:
     sys.exit()  
 
